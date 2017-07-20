@@ -27,7 +27,7 @@
     <script async="" src="<?=Yii::$app->urlManager->baseUrl?>/main/analytics.js"></script>
 
 
-    <title>Form</title>
+    <title><?=$form['name']?></title>
 
     <link rel="canonical" href="https://am.usembassy.gov/our-relationship/">
     <meta property="og:locale" content="en_US">

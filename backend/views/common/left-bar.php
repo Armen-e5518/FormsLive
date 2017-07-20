@@ -348,14 +348,21 @@
 								drag
 							</span>
                     <span class="configuration">
-                          <span class="btn-group btn-group-xs">
-                                 <span>Max Character</span>
-                                 <span> <input type="number" value="200" id="max-character" placeholder=""></span>
-						  </span>
-						  <span class="btn-group btn-group-xs n-empty">
-                                 <span>Not empty</span>
-                                 <span><input type="checkbox"></span>
-						  </span>
+                            <span class="btn-group btn-group-xs n-empty">
+                                   <input type="text" id="column-name-l" placeholder="Column name">
+								</span>
+                                <span class="btn-group btn-group-xs">
+                                    <span>Max Character</span>
+                                    <span> <input type="number" value="200" id="max-character" placeholder=""></span>
+								</span>
+								<span class="btn-group btn-group-xs n-empty">
+                                    <span>Not empty</span>
+                                    <span><input type="checkbox"></span>
+								</span>
+                                <span class="btn-group btn-group-xs f-search">
+                                    <span>Search</span>
+                                    <span><input type="checkbox"></span>
+								</span>
                     </span>
                     <div class="preview">Text area</div>
                     <div class="view">

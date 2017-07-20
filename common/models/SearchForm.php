@@ -101,4 +101,12 @@ class SearchForm extends \yii\db\ActiveRecord
         }
         return [];
     }
+
+    public static function GetLabelsByFormId($form_id)
+    {
+        if (!empty($form_id)) {
+            return self::find()->select(['column_label','column_name'])->where(['form_id' => $form_id])->indexBy('column_name')->column();
+        }
+        return [];
+    }
 }

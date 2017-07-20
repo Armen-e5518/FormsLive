@@ -5,6 +5,7 @@ use backend\models\FormsData;
 use backend\models\TableBuilder;
 use common\models\Forms;
 use common\models\PdfForm;
+use common\models\SearchForm;
 use yii\web\Controller;
 
 use Yii;
@@ -68,4 +69,14 @@ class AjaxController extends Controller
         }
     }
 
+    public static function actionGetColumnNames()
+    {
+        if (Yii::$app->request->isAjax) {
+            \Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
+            $post = Yii::$app->request->post();
+            if (!empty($post)) {
+                return SearchForm::GetLabelsByFormId($post['form_id']);
+            }
+        }
+    }
 }

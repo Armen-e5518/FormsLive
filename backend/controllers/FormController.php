@@ -5,6 +5,7 @@ namespace backend\controllers;
 use common\components\Helper;
 use common\models\Dynamic;
 use common\models\Forms;
+use common\models\SearchForm;
 use Yii;
 use yii\filters\AccessControl;
 use yii\filters\VerbFilter;
@@ -48,7 +49,7 @@ class FormController extends Controller
     public function actions()
     {
         if (Yii::$app->user->isGuest) {
-            $this->redirect(Yii::$app->urlManager->baseUrl.'/site/login');
+            $this->redirect(Yii::$app->urlManager->baseUrl . '/site/login');
         }
     }
 
@@ -108,15 +109,5 @@ class FormController extends Controller
         return $this->render('clone', [
             'form' => Forms::GetFormById($id),
         ]);
-    }
-
-    public function actionSendMail()
-    {
-        $m = Yii::$app->mailer->compose()
-            ->setFrom('from@domain.com')
-            ->setTo('garmen5518@gmail.com')
-            ->setSubject('text')
-            ->send();
-        var_dump($m);
     }
 }

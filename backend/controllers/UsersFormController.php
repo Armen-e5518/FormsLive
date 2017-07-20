@@ -53,6 +53,7 @@ class UsersFormController extends Controller
 //        if (!(User::getUserStatus() == 'SUPER_ADMIN')) {
 //            $this->redirect(Yii::$app->urlManager->baseUrl);
 //        }
+
         $this->enableCsrfValidation = false;
         return parent::beforeAction($action);
     }

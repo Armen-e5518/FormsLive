@@ -29,16 +29,17 @@ class Helper
             $flag = true;
             foreach ($file as $name => $value) {
                 if (!empty($value['name'])) {
-//                    $target_dir = \Yii::$app->basePath . '/web/uploads/';
                     $target_dir = \Yii::$app->params['root_path'] . 'backend/web/uploads/';
                     $name_array = explode(".", basename($file[$name]["name"]));
+                    $filename = pathinfo($file[$name]['name'], PATHINFO_FILENAME);
+                    $filename = preg_replace('/[^A-Za-z0-9 _ .-]/', '_', $filename);
+                    $filename .= rand(1, 100);
                     $format = end($name_array);
-                    $file_name = md5(microtime(true) + rand(1, 100));
-                    $target_file = $target_dir . $file_name . '.' . $format;
+                    $target_file = $target_dir . $filename . '.' . $format;
                     if (!move_uploaded_file($file[$name]["tmp_name"], $target_file)) {
                         $flag = false;
                     } else {
-                        $arr[$name] = $file_name . '.' . $format;
+                        $arr[$name] = $filename . '.' . $format;
                     }
                 }
             }
