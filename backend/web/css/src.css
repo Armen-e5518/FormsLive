@@ -570,7 +570,7 @@ select {
 }
 
 #user-view textarea {
-    height: 50px;
+    overflow: hidden;
 }
 
 @media (max-width: 768px) {

@@ -5,17 +5,15 @@ $(document).ready(function () {
     $('#save-data').click(function () {
         if (CheckNotEmptyAndEmailVal(true)) {
             $('#data-form').submit();
-        }else {
+        } else {
             console.log('Not Valid')
         }
     })
-	
-	$('#user-view textarea').on('keydown , paste', function () {
+
+    $('#user-view textarea').on('keydown , paste', function () {
         var el = this;
         setTimeout(function () {
             el.style.cssText = 'height:auto; padding:0';
-            // for box-sizing other than "content-box" use:
-            // el.style.cssText = '-moz-box-sizing:content-box';
             el.style.cssText = 'height:' + el.scrollHeight + 'px';
         }, 0);
     })
@@ -55,8 +53,8 @@ function CheckNotEmptyAndEmailVal(scroll_flag) {
             $(this).closest('.view').find('.error-pop').remove()
         }
     })
-	
-    $('#user-view .gen-name').each(function () {
+
+    $('#user-view .gen-name[max-character]').each(function () {
         var max_character = $(this).attr('max-character')
         if (max_character) {
             if ($(this).val().length * 1 > max_character * 1) {
@@ -67,7 +65,10 @@ function CheckNotEmptyAndEmailVal(scroll_flag) {
                 if (scroll_flag) {
                     $('body').scrollTop($(this).offset().top - 80);
                 }
-            } 
+            } else {
+                $(this).removeClass('empty-active')
+                $(this).closest('.view').find('.error-pop').remove()
+            }
         }
     });
 
@@ -91,7 +92,7 @@ function CheckNotEmptyAndEmailVal(scroll_flag) {
                 flag = false;
                 var checked_required_ob = $('#user-view .checked-required[name-required="' + val + '"]');
                 checked_required_ob.closest('div').find('.name-title').addClass('radio-active')
-                 if (scroll_flag) {
+                if (scroll_flag) {
                     $('body').scrollTop(checked_required_ob.offset().top - 80);
                 }
             } else {

@@ -1,4 +1,17 @@
 $(document).ready(function () {
+    setTimeout(function () {
+        SetTextAreaSize();
+    },500)
+
+
+    $('#user-view textarea').on('keydown , paste', function () {
+        var el = this;
+        setTimeout(function () {
+            el.style.cssText = 'height:auto; padding:0';
+            el.style.cssText = 'height:' + el.scrollHeight + 'px';
+        }, 0);
+    })
+
     $('#admin').click(function () {
         var href = location.protocol + "//" + document.domain + _baseUrl;
         window.location.href = href;
@@ -221,4 +234,15 @@ function GetNormalName(string) {
     // s1 = s1.replace(' ', "_");
     s1 = s1.replace(':', "");
     return s1;
+}
+
+function SetTextAreaSize() {
+    $('#user-view textarea').each(function () {
+        var el = this;
+        setTimeout(function () {
+            el.style.cssText = 'height:auto; padding:0';
+            el.style.cssText = 'height:' + el.scrollHeight + 'px';
+        }, 0);
+    })
+
 }
