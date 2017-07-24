@@ -1,13 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cf36bc49-245d-4c14-ae74-524d40d6c29e" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/web/css/src.css" afterPath="$PROJECT_DIR$/backend/web/css/src.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/web/js/save-form-data.js" afterPath="$PROJECT_DIR$/backend/web/js/save-form-data.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/web/js/src.js" afterPath="$PROJECT_DIR$/backend/web/js/src.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/views/site/thank.php" afterPath="$PROJECT_DIR$/frontend/views/site/thank.php" />
-    </list>
+    <list default="true" id="cf36bc49-245d-4c14-ae74-524d40d6c29e" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -207,15 +201,15 @@
       <workItem from="1499847289320" duration="1048000" />
       <workItem from="1499850697526" duration="1435000" />
       <workItem from="1500527129828" duration="4791000" />
-      <workItem from="1500865416060" duration="819000" />
+      <workItem from="1500865416060" duration="1012000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="15453000" />
+    <option name="totallyTimeSpent" value="15646000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1919" y="0" width="1602" height="875" extended-state="7" />
+    <frame x="1919" y="0" width="1602" height="875" extended-state="6" />
     <editor active="false" />
     <layout>
       <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27027026" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
