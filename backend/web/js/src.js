@@ -1,8 +1,9 @@
 $(document).ready(function () {
+    ChangeTextInALink();
+    $('#user-view').show();
     setTimeout(function () {
         SetTextAreaSize();
-    },500)
-
+    }, 500);
 
     $('#user-view textarea').on('keydown , paste', function () {
         var el = this;
@@ -126,16 +127,16 @@ $(document).ready(function () {
             $(this).closest('.box-element').find('.view input').removeClass('search-on')
         }
     });
-	
-	$('.demo .gen-name[max-character]').each(function () {
+
+    $('.demo .gen-name[max-character]').each(function () {
         $(this).closest('.box-element').find('.configuration #max-character').val($(this).attr('max-character'));
     })
 
-	 $('.demo  .view .not-empty').each(function () {
+    $('.demo  .view .not-empty').each(function () {
         $(this).closest('.box-element').find('.configuration .n-empty input').prop("checked", true);
     })
-	 
-	$('.demo  .view .search-on').each(function () {
+
+    $('.demo  .view .search-on').each(function () {
         $(this).closest('.box-element').find('.configuration .f-search input').prop("checked", true);
     })
 
@@ -244,5 +245,37 @@ function SetTextAreaSize() {
             el.style.cssText = 'height:' + el.scrollHeight + 'px';
         }, 0);
     })
+}
 
+function ChangeTextInALink() {
+    $('#user-view .text-title').each(function () {
+        ChangeHtmlSpecialCharacters($(this))
+    });
+    $(' #user-view .view h1').each(function () {
+        ChangeHtmlSpecialCharacters($(this))
+    });
+    $(' #user-view .view h2').each(function () {
+        ChangeHtmlSpecialCharacters($(this))
+    });
+    $(' #user-view .view h3').each(function () {
+        ChangeHtmlSpecialCharacters($(this));
+    });
+    $(' #user-view .view h4').each(function () {
+        ChangeHtmlSpecialCharacters($(this));
+    });
+    $('#user-view .name-title').each(function () {
+        ChangeHtmlSpecialCharacters($(this))
+    });
+    $('#user-view .view p').each(function () {
+        ChangeHtmlSpecialCharacters($(this))
+    });
+}
+
+function ChangeHtmlSpecialCharacters(ob) {
+    if (!ob.hasClass('decode')) {
+        ob.addClass('decode');
+        var $this = ob;
+        var t = $this.text();
+        $this.html(t.replace('&lt', '<').replace('&gt', '>'));
+    }
 }

@@ -1,5 +1,6 @@
 <?php
 use common\widgets\Alert;
+use yii\helpers\Html;
 
 echo Alert::widget();
 $this->registerCssFile('/css/usembassy/src1.css');
@@ -19,7 +20,8 @@ $this->registerJsFile('/js/save-form.js', ['position' => \yii\web\View::POS_END]
             <form id="data-form" action="" method="post" enctype="multipart/form-data">
                 <input type="hidden" name="form_id" value="<?= $id ?>">
                 <input type="hidden" name="date" value="<?= date("Y-m-d H:i:s"); ?>">
-                <?= \yii\helpers\Html::decode($form['html']) ?>
+                <?= Html::encode(Html::encode($form['html'])) ?>
+                <!--                --><? //= html_entity_decode($form['html']) ?>
                 <div class="save-button">
                     <button id="save-data" type="button" class="btn btn-success">Save Data</button>
                 </div>
@@ -27,7 +29,6 @@ $this->registerJsFile('/js/save-form.js', ['position' => \yii\web\View::POS_END]
         </div>
     </div>
 </div>
-
 
 
 <script>

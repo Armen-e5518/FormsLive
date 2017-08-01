@@ -6008,7 +6008,7 @@
     <div class="content row">
         <div class="mo-wrapper">
             <div class="row devpreview">
-                <div class="demo" id="user-view">
+                <div class="demo" id="user-view" style="display: none;">
                     <form id="data-form" action="" method="post" enctype="multipart/form-data">
                         <input type="hidden" name="form_id" value="<?= $id ?>">
                         <input type="hidden" name="date" value="<?= date("Y-m-d H:i:s"); ?>">
