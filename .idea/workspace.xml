@@ -2,11 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cf36bc49-245d-4c14-ae74-524d40d6c29e" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.gitignore" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/web/js/save-form-data.js" afterPath="$PROJECT_DIR$/backend/web/js/save-form-data.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/web/js/src.js" afterPath="$PROJECT_DIR$/backend/web/js/src.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/views/site/new-view.php" afterPath="$PROJECT_DIR$/frontend/views/site/new-view.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/views/site/view.php" afterPath="$PROJECT_DIR$/frontend/views/site/view.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -24,11 +21,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="index.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="15">
               <caret line="1" column="10" lean-forward="true" selection-start-line="1" selection-start-column="10" selection-end-line="1" selection-end-column="10" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="300">
+              <caret line="20" column="0" lean-forward="true" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -80,6 +87,7 @@
         <option value="$PROJECT_DIR$/frontend/views/site/new-view.php" />
         <option value="$PROJECT_DIR$/backend/web/js/src.js" />
         <option value="$PROJECT_DIR$/index.php" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -133,7 +141,7 @@
     <property name="nodejs_interpreter_path" value="/usr/local/bin/node" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="add_unversioned_files" value="$PROJECT_DIR$/common/config/main-local.php" />
+    <property name="add_unversioned_files" value="$PROJECT_DIR$/common/config/main-local.php&#10;/var/www/html/YiiForm/forms/.gitignore" />
     <property name="ignore_missing_gitignore" value="true" />
     <property name="js.eslint.eslintPackage" value="" />
     <property name="js-jscs-nodeInterpreter" value="/usr/local/bin/node" />
@@ -232,12 +240,12 @@
       <workItem from="1499850697526" duration="1435000" />
       <workItem from="1500527129828" duration="4791000" />
       <workItem from="1500865416060" duration="12426000" />
-      <workItem from="1501575638037" duration="173000" />
+      <workItem from="1501575638037" duration="603000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="27233000" />
+    <option name="totallyTimeSpent" value="27663000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1919" y="0" width="1602" height="875" extended-state="6" />
@@ -313,7 +321,7 @@
         <state relative-caret-position="390">
           <caret line="27" column="19" lean-forward="true" selection-start-line="27" selection-start-column="19" selection-end-line="27" selection-end-column="19" />
           <folding>
-            <element signature="e#6#31#0#PHP" expanded="true" />
+            <element signature="e#6#31#0#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -576,7 +584,7 @@
         <state relative-caret-position="405">
           <caret line="27" column="19" lean-forward="false" selection-start-line="27" selection-start-column="19" selection-end-line="27" selection-end-column="19" />
           <folding>
-            <element signature="e#6#31#0#PHP" expanded="true" />
+            <element signature="e#6#31#0#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -585,6 +593,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
           <caret line="1" column="10" lean-forward="true" selection-start-line="1" selection-start-column="10" selection-end-line="1" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="20" column="0" lean-forward="true" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
           <folding />
         </state>
       </provider>
