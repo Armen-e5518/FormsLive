@@ -173,7 +173,7 @@ function TableGeneratorByTextBox(row, col) {
                 if (j == 0) {
                     text = 'text'
                 } else {
-                    text = '<input class="text-box-table gen-name" name="' + NameGenerator('table') + '" type="text">'
+                    text = '<textarea class="text-box-table gen-name" name="' + NameGenerator('table') + '" ></textarea>'
                 }
             }
             html += '<th class="success">' + text + '</th>'
@@ -224,8 +224,8 @@ function NameGenerator(text, ob) {
     //      }
     // }
     var text = text + '_' + title + '_';
-    var possible = "7418529630215478963205147852014679580312945";
-    for (var i = 0; i < 3; i++)text += possible.charAt(Math.floor(Math.random() * possible.length));
+    var possible = "1234567890qwertyuioplkjhgfdsazxcvbnm";
+    for (var i = 0; i < 5; i++)text += possible.charAt(Math.floor(Math.random() * possible.length));
     return text;
 }
 

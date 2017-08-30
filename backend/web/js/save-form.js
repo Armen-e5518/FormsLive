@@ -61,6 +61,14 @@ function SetItemName() {
             ob.find('.gen-file').attr('name', NameGenerator('file', ob));
             ob.find('.gen-file').addClass('gen-name')
         }
+        if (ob.find('table textarea').length > 0) {
+            out('table');
+            ob.find('table th textarea').each(function () {
+                $(this).attr('name', NameGenerator('table', ob));
+                $(this).addClass('gen-name')
+            })
+
+        }
     })
 }
 

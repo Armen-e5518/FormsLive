@@ -636,28 +636,43 @@ select {
 #max-character {
     width: 45px;
 }
-.configuration span,.configuration a{
-    font-size: 11px!important;
+
+.configuration span, .configuration a {
+    font-size: 11px !important;
 }
-.radio-element{
-    height:45px!important;
+
+.radio-element {
+    height: 45px !important;
 }
+
 .sidebar-nav .preview {
     line-height: 15px;
 }
-.new-group-options .op-title{
+
+.new-group-options .op-title {
     position: absolute;
     top: 21px;
     left: 28px;
 }
 
-.new-group-options input{
+.new-group-options input {
     position: absolute;
-    top: 2px!important;
+    top: 2px !important;
     left: 38px;
-    height: 16px!important;
+    height: 16px !important;
 
 }
-.new-group-options .new-group{
-    top: 21px!important;
+
+.new-group-options .new-group {
+    top: 21px !important;
+}
+
+.view .table-responsive {
+    margin: 0 15px 0 13px;
+}
+
+.view .table-responsive tr th {
+    padding: 5px;
+    vertical-align: middle;
+    font-size: 15px !important;
 }

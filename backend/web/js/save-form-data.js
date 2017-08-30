@@ -25,7 +25,7 @@ function CheckNotEmptyAndEmailVal(scroll_flag) {
         var val = $(this).val();
         if (!val) {
             flag = false;
-            out('not-empty')
+            out('not-empty');
             $(this).addClass('empty-active');
             $(this).closest('.view').find('.error-pop').remove()
             $(this).after('<span class="error-pop">Required field...</span>')
@@ -38,7 +38,7 @@ function CheckNotEmptyAndEmailVal(scroll_flag) {
         }
     });
 
-    if (flag) {
+    // if (flag) {
         $('#user-view input[type="email"]').each(function () {
             if (!validateEmail($(this).val())) {
                 flag = false;
@@ -54,27 +54,30 @@ function CheckNotEmptyAndEmailVal(scroll_flag) {
                 $(this).closest('.view').find('.error-pop').remove()
             }
         })
-    }
+    // }
 
-    if (flag) {
+    // if (flag) {
         $('#user-view .gen-name[max-character]').each(function () {
-            var max_character = $(this).attr('max-character');
-            if (max_character) {
-                if ($(this).val().length * 1 > max_character * 1) {
-                    out('character')
-                    $(this).addClass('empty-active')
-                    $(this).closest('.view').find('.error-pop').remove()
-                    $(this).after('<span class="error-pop">Text should contain at most ' + max_character + ' characters...</span>')
-                    if (scroll_flag) {
-                        $('body').scrollTop($(this).offset().top - 80);
+            if($(this).val().length * 1 > 0){
+                var max_character = $(this).attr('max-character');
+                if (max_character) {
+                    if ($(this).val().length * 1 > max_character * 1) {
+                        flag = false;
+                        out('character')
+                        $(this).addClass('empty-active')
+                        $(this).closest('.view').find('.error-pop').remove()
+                        $(this).after('<span class="error-pop">Text should contain at most ' + max_character + ' characters...</span>')
+                        if (scroll_flag) {
+                            $('body').scrollTop($(this).offset().top - 80);
+                        }
+                    } else {
+                        $(this).removeClass('empty-active')
+                        $(this).closest('.view').find('.error-pop').remove()
                     }
-                } else {
-                    $(this).removeClass('empty-active')
-                    $(this).closest('.view').find('.error-pop').remove()
                 }
             }
         });
-    }
+    // }
     var Rad_names = [];
     var Rad_name = '';
     $('#user-view .checked-required').each(function () {
