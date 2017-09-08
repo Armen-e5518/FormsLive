@@ -1,0 +1,99 @@
+Migration,
+----------------------------------------------
+Yii - table 
+
+
+ user, 
+---------------------------------------
+Yii users table 
+
+
+
+vid_matchs, 
+------------
+Id      MC-id
+Team1_id   MC-t-id
+Team2_id  
+Data   
+Video_src 
+Status_end  ‘N’-end ‘Y’ -yes 
+
+
+
+vid_actions, 
+-----------------------
+Id  - auto incremnet inndex
+Action_name -  actioni anun@
+Action_type  - actioni tip@ (EXIT, GOAL,GOALC,END,START)
+Type  "1"- goal keeper  0 - def
+Time_before  - timeri videoyi ktrelu range 
+time_after- timeri videoyi ktrelu range 
+Event_type  1-evnet 0-action 
+Main_type ekranin erevacox battner@  (S,E,R)
+Timer_role - buttneri indikatorner guyni 
+Sorting - Buttonneri sorting 
+
+Vid_events,
+-----------------------------------
+Id --- incremnet inndex
+Match_id  -- Maatchi idna MC-i
+Action_id  -- Actioni Id 
+Player1_id -- Player 1 id 
+Player2_id ---  Player 2 id 
+Time_game -- Timeri jamanakne 
+Time_video  --- Videoyi jamanakn 
+Success  --- Success 1
+card_yellow
+card_red
+visible
+full_geolocation
+half_geolocation
+half_time
+favorite
+sec_action_id
+sec_player1_id
+sec_player2_id
+sec_success
+sec_full_geolocation
+time_from
+time_to
+video_src
+Status_video  0-local,1-server 
+
+
+
+
+ Vid_players, getMC-info 
+--------------
+Id MC-player id
+player_name
+player_number
+team_id
+Date Save data
+
+
+
+ vid_match_players_number, 
+-----------------------------------
+Id   AI
+Match_id   --- 
+Player_id -- MC-player id 
+Number   changed number 
+
+
+
+
+
+Vid_player_positions,
+ ----------------------------
+Id  AI
+Match_id MC-m-id
+Player_id Mc-player-id
+Player_position Local position 
+
+
+Vid_teams
+------------------------
+Id  MC-id
+Team_name MC- name
+
