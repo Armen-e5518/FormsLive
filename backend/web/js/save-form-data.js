@@ -3,9 +3,14 @@ $(document).ready(function () {
         CheckNotEmptyAndEmailVal(false)
     })
     $('#save-data').click(function () {
+        var ob = $(this);
+        ob.find('.loading').show();
+        ob.prop('disabled', true)
         if (CheckNotEmptyAndEmailVal(true)) {
             $('#data-form').submit();
         } else {
+            ob.find('.loading').hide();
+            ob.prop('disabled', false)
             console.log('Not Valid')
         }
     })
@@ -39,44 +44,44 @@ function CheckNotEmptyAndEmailVal(scroll_flag) {
     });
 
     // if (flag) {
-        $('#user-view input[type="email"]').each(function () {
-            if (!validateEmail($(this).val())) {
-                flag = false;
-                out('email');
-                $(this).addClass('empty-active')
-                $(this).closest('.view').find('.error-pop').remove();
-                $(this).after('<span class="error-pop">Incorrect email address...</span>')
-                if (scroll_flag) {
-                    $('body').scrollTop($(this).offset().top - 80);
-                }
-            } else {
-                $(this).removeClass('empty-active')
-                $(this).closest('.view').find('.error-pop').remove()
+    $('#user-view input[type="email"]').each(function () {
+        if (!validateEmail($(this).val())) {
+            flag = false;
+            out('email');
+            $(this).addClass('empty-active')
+            $(this).closest('.view').find('.error-pop').remove();
+            $(this).after('<span class="error-pop">Incorrect email address...</span>')
+            if (scroll_flag) {
+                $('body').scrollTop($(this).offset().top - 80);
             }
-        })
+        } else {
+            $(this).removeClass('empty-active')
+            $(this).closest('.view').find('.error-pop').remove()
+        }
+    })
     // }
 
     // if (flag) {
-        $('#user-view .gen-name[max-character]').each(function () {
-            if($(this).val().length * 1 > 0){
-                var max_character = $(this).attr('max-character');
-                if (max_character) {
-                    if ($(this).val().length * 1 > max_character * 1) {
-                        flag = false;
-                        out('character')
-                        $(this).addClass('empty-active')
-                        $(this).closest('.view').find('.error-pop').remove()
-                        $(this).after('<span class="error-pop">Text should contain at most ' + max_character + ' characters...</span>')
-                        if (scroll_flag) {
-                            $('body').scrollTop($(this).offset().top - 80);
-                        }
-                    } else {
-                        $(this).removeClass('empty-active')
-                        $(this).closest('.view').find('.error-pop').remove()
+    $('#user-view .gen-name[max-character]').each(function () {
+        if ($(this).val().length * 1 > 0) {
+            var max_character = $(this).attr('max-character');
+            if (max_character) {
+                if ($(this).val().length * 1 > max_character * 1) {
+                    flag = false;
+                    out('character')
+                    $(this).addClass('empty-active')
+                    $(this).closest('.view').find('.error-pop').remove()
+                    $(this).after('<span class="error-pop">Text should contain at most ' + max_character + ' characters...</span>')
+                    if (scroll_flag) {
+                        $('body').scrollTop($(this).offset().top - 80);
                     }
+                } else {
+                    $(this).removeClass('empty-active')
+                    $(this).closest('.view').find('.error-pop').remove()
                 }
             }
-        });
+        }
+    });
     // }
     var Rad_names = [];
     var Rad_name = '';

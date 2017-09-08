@@ -19,9 +19,9 @@ $this->registerJsFile('//cdn.datatables.net/buttons/1.3.1/js/buttons.html5.min.j
 $this->registerJsFile('//cdn.datatables.net/buttons/1.3.1/js/buttons.print.min.js', ['position' => \yii\web\View::POS_END]);
 
 
-$this->registerJsFile(Yii::$app->urlManager->baseUrl.'/js/table/form-data-table.js', ['position' => \yii\web\View::POS_END]);
-$this->registerJsFile(Yii::$app->urlManager->baseUrl.'/js/table/form-data-index.js', ['position' => \yii\web\View::POS_END]);
-$this->registerJsFile(Yii::$app->urlManager->baseUrl.'/js/table/table-normal-column.js', ['position' => \yii\web\View::POS_END]);
+$this->registerJsFile(Yii::$app->urlManager->baseUrl . '/js/table/form-data-table.js', ['position' => \yii\web\View::POS_END]);
+$this->registerJsFile(Yii::$app->urlManager->baseUrl . '/js/table/form-data-index.js', ['position' => \yii\web\View::POS_END]);
+$this->registerJsFile(Yii::$app->urlManager->baseUrl . '/js/table/table-normal-column.js', ['position' => \yii\web\View::POS_END]);
 //dmstr\web\AdminLteAsset::register($this);
 $this->title = $form['name'];
 $this->params['breadcrumbs'][] = $this->title;
@@ -29,7 +29,7 @@ $this->params['breadcrumbs'][] = $this->title;
 <div class="row">
     <div class="col-md-12">
         <div class="search">
-            <form id="form-index" method="get" action="<?=Yii::$app->urlManager->baseUrl?>/site/form">
+            <form id="form-index" method="get" action="<?= Yii::$app->urlManager->baseUrl ?>/site/form">
                 <?= Select2::widget([
                     'id' => 'form-select',
                     'value' => $form_id,
@@ -74,7 +74,7 @@ $this->params['breadcrumbs'][] = $this->title;
                                     ]) ?>
                             <?php endif; ?>
                             <?= Html::a('<span class="glyphicon glyphicon-save"></span>',
-                                ['/site/save-zip-file', 'fid' => $form_id, 'id' => $data['id']],
+                                ['/users-form/form', 'fid' => $form_id, 'id' => $data['id'], 'zip' => 1],
                                 [
                                     'class' => 'btn btn-success',
                                     'target' => '_blank',

@@ -19,8 +19,8 @@ $this->registerJsFile('//cdn.datatables.net/buttons/1.3.1/js/buttons.html5.min.j
 $this->registerJsFile('//cdn.datatables.net/buttons/1.3.1/js/buttons.print.min.js', ['position' => \yii\web\View::POS_END]);
 
 
-$this->registerJsFile(Yii::$app->urlManager->baseUrl.'/js/table/form-data-table.js', ['position' => \yii\web\View::POS_END]);
-$this->registerJsFile(Yii::$app->urlManager->baseUrl.'/js/table/form-data-index.js', ['position' => \yii\web\View::POS_END]);
+$this->registerJsFile(Yii::$app->urlManager->baseUrl . '/js/table/form-data-table.js', ['position' => \yii\web\View::POS_END]);
+$this->registerJsFile(Yii::$app->urlManager->baseUrl . '/js/table/form-data-index.js', ['position' => \yii\web\View::POS_END]);
 //dmstr\web\AdminLteAsset::register($this);
 
 
@@ -74,7 +74,7 @@ $this->params['breadcrumbs'][] = $this->title;
                                         ]) ?>
                                 <?php endif; ?>
                                 <?= Html::a('<span class="glyphicon glyphicon-save"></span>',
-                                    ['/site/save-zip-file', 'fid' => $data['fid'], 'id' => $data['id']],
+                                    ['/users-form/form', 'fid' => $data['fid'], 'id' => $data['id'], 'zip' => 1],
                                     [
                                         'class' => 'btn btn-success',
                                         'target' => '_blank',

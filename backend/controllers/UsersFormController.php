@@ -42,9 +42,10 @@ class UsersFormController extends Controller
         ];
     }
 
-    public function actions(){
-        if(Yii::$app->user->isGuest){
-            $this->redirect(Yii::$app->urlManager->baseUrl.'/site/login');
+    public function actions()
+    {
+        if (Yii::$app->user->isGuest) {
+            $this->redirect(Yii::$app->urlManager->baseUrl . '/site/login');
         }
     }
 
@@ -75,19 +76,20 @@ class UsersFormController extends Controller
         if (empty($id)) {
             $this->redirect('/users-form');
         }
-        $search = Yii::$app->request->post('search')?Yii::$app->request->post('search'):null;
+        $search = Yii::$app->request->post('search') ? Yii::$app->request->post('search') : null;
         return $this->render('form-data', [
             'form_data' => FormsData::GetFormDataById($id, $search),
             'search' => $search
         ]);
     }
 
-    public function actionForm($fid, $id)
+    public function actionForm($fid, $id, $zip = 0)
     {
         return $this->render('form', [
             'form' => Forms::GetFormById($fid),
             'form_id' => $fid,
             'id' => $id,
+            'zip' => $zip,
             'pdf' => Yii::$app->request->get('pdf')
         ]);
     }
@@ -100,6 +102,7 @@ class UsersFormController extends Controller
             'id' => $id,
         ]);
     }
+
     public function actionFormPdfTest($fid, $id)
     {
         return $this->render('form-pdf', [

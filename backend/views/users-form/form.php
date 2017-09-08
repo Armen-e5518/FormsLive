@@ -30,4 +30,5 @@ $this->title = $form['name'];
     var _Form_id = "<?=!empty($form['id']) ? $form['id'] : null?>";
     var _Id = "<?=!empty($id) ? $id : null?>";
     var _Pdf = "<?=!empty($pdf) ? $pdf : null?>";
+    var _Zip = "<?=!empty($zip) ? $zip : null?>";
 </script>

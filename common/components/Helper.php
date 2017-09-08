@@ -11,7 +11,9 @@ namespace common\components;
 
 use backend\models\FormsData;
 use common\models\Forms;
+use common\models\PdfForm;
 use common\models\User;
+use kartik\mpdf\Pdf;
 
 class Helper
 {
@@ -68,6 +70,7 @@ class Helper
     public static function GetZipUrl($form_id = null, $form_data_id = null)
     {
         if (!empty($form_id) && !empty($form_data_id)) {
+            $pdf = self::SavePdf($form_id, $form_data_id);
             $data = FormsData::GetFormDataByFormIdByDataId($form_id, $form_data_id);
             if (!empty($data)) {
                 $flag = false;
@@ -81,6 +84,10 @@ class Helper
                 if ($zip->open($zip_file, \ZipArchive::CREATE) !== TRUE) {
                     throw new \Exception('Cannot create a zip file');
                 }
+                if (!empty($pdf)) {
+                    $zip->addFile($pdf['path'], $pdf['name']);
+                }
+
                 foreach ($data as $kay => $d) {
 
                     if ((!(strripos($kay, 'file_') === false) && $d != null)) {
@@ -148,4 +155,56 @@ class Helper
         }
     }
 
+
+    public static function SavePdf($fid, $id)
+    {
+        if (empty($fid) && empty($id)) {
+            return false;
+        }
+
+        $form_data = FormsData::GetFormDataByFormIdByDataId($fid, $id);
+        $content = \Yii::$app->controller->renderPartial('pdf-content', [
+            'form' => PdfForm::GetPdfContentByFormIdDataId($fid, $id),
+        ]);
+        $pdf = new Pdf([
+            // set to use core fonts only
+            'mode' => Pdf::MODE_CORE,
+            // A4 paper format
+            'format' => Pdf::FORMAT_A4,
+            // portrait orientation
+            'orientation' => Pdf::ORIENT_PORTRAIT,
+            // stream to browser inline
+            'destination' => Pdf::DEST_BROWSER,
+            // your html content input
+            'content' => $content,
+            // format content from your own css file if needed or use the
+//             enhanced bootstrap css built by Krajee for mPDF formatting
+//            'cssFile' => '@web/css/pdf-css.css',
+            'cssFile' => '@vendor/kartik-v/yii2-mpdf/assets/kv-mpdf-bootstrap.min.css',
+            // any css to be embedded if required
+//            'cssInline' => '.kv-heading-1{font-size:18px}',
+            // set mPDF properties on the fly
+            'options' => ['title' => 'U.S. Embassy in Armenia ' . date('YY-MM-DD')],
+            // call mPDF methods on the fly
+            'methods' => [
+                'SetHeader' => [$form_data['user_first_name_1'] . ' ' . $form_data['user_last_name_1'] . ' ' . date('Y-m-d')],
+                'SetFooter' => ['U.S. Embassy in Armenia | {PAGENO}'],
+            ]
+        ]);
+        \Yii::$app->response->format = \yii\web\Response::FORMAT_RAW;
+        $headers = \Yii::$app->response->headers;
+        $headers->add('Content-Type', 'application/pdf');
+        // return the pdf output as per the destination setting
+        $path_pdf = $target_dir = \Yii::$app->basePath . '/web/uploads/pdfs/';
+        $file_name = $form_data['user_first_name_1'] . '_' . $form_data['user_last_name_1'] . '_' . date('Y-m-d').'.pdf';
+        $full_phath = $path_pdf . $file_name;
+        fopen($full_phath, 'a+');
+        if (file_put_contents($full_phath, $pdf->Output($content, 'pdf.pdf', 'S'))) {
+            return [
+                'path' => $full_phath,
+                'name' => $file_name
+            ];
+        };
+        return false;
+    }
 }

@@ -13,6 +13,11 @@ function SavePdfContentFile(content) {
                 var href = location.protocol + "//" + document.domain + _baseUrl + '/site/set-pdf?fid=' + _Form_id + '&id=' + _Id;
                 window.location.href = href;
             }
+            if (_Zip == 1) {
+                // /admin/site/set-pdf?fid=198&id=15
+                var href = location.protocol + "//" + document.domain + _baseUrl + '/site/save-zip-file?fid=' + _Form_id + '&id=' + _Id;
+                window.location.href = href;
+            }
         }
     })
 }

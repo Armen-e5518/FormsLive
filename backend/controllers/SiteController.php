@@ -37,7 +37,9 @@ class SiteController extends Controller
                             'error',
                             'save-zip-file',
                             'save', 'no-file',
-                            'form', 'set-pdf',
+                            'form',
+                            'set-pdf',
+                            'save-pdf',
                             'dom',
                             'reset-password',
                             'css',
@@ -242,7 +244,6 @@ class SiteController extends Controller
         if (empty($fid) && empty($id)) {
             $this->redirect('/admin/site/');
         }
-
         $this->layout = false;
         $form_data = FormsData::GetFormDataByFormIdByDataId($fid, $id);
 //        Helper::Out($form_data);
@@ -250,25 +251,25 @@ class SiteController extends Controller
             'form' => PdfForm::GetPdfContentByFormIdDataId($fid, $id),
         ]);
         $pdf = new Pdf([
-            // set to use core fonts only
+// set to use core fonts only
             'mode' => Pdf::MODE_CORE,
-            // A4 paper format
+// A4 paper format
             'format' => Pdf::FORMAT_A4,
-            // portrait orientation
+// portrait orientation
             'orientation' => Pdf::ORIENT_PORTRAIT,
-            // stream to browser inline
+// stream to browser inline
             'destination' => Pdf::DEST_BROWSER,
-            // your html content input
+// your html content input
             'content' => $content,
-            // format content from your own css file if needed or use the
+// format content from your own css file if needed or use the
 //             enhanced bootstrap css built by Krajee for mPDF formatting
 //            'cssFile' => '@web/css/pdf-css.css',
             'cssFile' => '@vendor/kartik-v/yii2-mpdf/assets/kv-mpdf-bootstrap.min.css',
             // any css to be embedded if required
 //            'cssInline' => '.kv-heading-1{font-size:18px}',
-            // set mPDF properties on the fly
+// set mPDF properties on the fly
             'options' => ['title' => 'U.S. Embassy in Armenia ' . date('YY-MM-DD')],
-            // call mPDF methods on the fly
+// call mPDF methods on the fly
             'methods' => [
                 'SetHeader' => [$form_data['user_first_name_1'] . ' ' . $form_data['user_last_name_1'] .' '. date('Y-m-d')],
                 'SetFooter' => ['U.S. Embassy in Armenia | {PAGENO}'],
