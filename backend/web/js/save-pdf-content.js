@@ -16,7 +16,14 @@ function SavePdfContentFile(content) {
             if (_Zip == 1) {
                 // /admin/site/set-pdf?fid=198&id=15
                 var href = location.protocol + "//" + document.domain + _baseUrl + '/site/save-zip-file?fid=' + _Form_id + '&id=' + _Id;
-                window.location.href = href;
+                win = window.open(href)
+                var timer = setInterval(checkChild, 500);
+                function checkChild() {
+                    if (win.closed) {
+                        var href = location.protocol + "//" + document.domain + _baseUrl + '/site';
+                        window.location.href = href;
+                    }
+                }
             }
         }
     })

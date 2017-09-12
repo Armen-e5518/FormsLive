@@ -77,7 +77,7 @@ $this->params['breadcrumbs'][] = $this->title;
                                 ['/users-form/form', 'fid' => $form_id, 'id' => $data['id'], 'zip' => 1],
                                 [
                                     'class' => 'btn btn-success',
-                                    'target' => '_blank',
+//                                    'target' => '_blank',
                                 ]) ?>
                             <?= Html::a('<span class="glyphicon glyphicon-eye-open"></span>',
                                 ['/users-form/form', 'fid' => $form_id, 'id' => $data['id']],
