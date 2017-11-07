@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    ChangeTextInALink();
+    // ChangeTextInALink();
     $('#user-view').show();
     setTimeout(function () {
         SetTextAreaSize();
