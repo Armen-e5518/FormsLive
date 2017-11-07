@@ -6265,7 +6265,8 @@
     <div id="usasearch_sayt"
          style="background: none; border: 0px; display: block; float: none; height: 0px; line-height: 0; margin: 0px; padding: 0px; position: static; width: 0px;">
         <ul class="ui-autocomplete ui-menu ui-widget ui-widget-content ui-corner-all" role="listbox"
-            aria-activedescendant="ui-active-menuitem" style="z-index: 501; top: 0px; left: 0px; display: none;"></ul>
+            aria-activedescendant="ui-active-menuitem" style="z-index: 501; top: 0px; left: 0px; display: none;">
+        </ul>
     </div>
     <div id="ads"></div>
 </body>

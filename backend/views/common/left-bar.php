@@ -663,7 +663,7 @@
                     <div class="preview">
                         <input type="number" value="" placeholder="Count row" class="form-control"
                                id="drop-down-g">
-                        <span></span>
+                        <span id="drop-dowg-src"></span>
                     </div>
                     <div class="view"></div>
                 </div>

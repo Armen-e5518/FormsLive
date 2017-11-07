@@ -241,15 +241,18 @@ class SiteController extends Controller
 
     public function actionSetPdf($fid, $id)
     {
+
         if (empty($fid) && empty($id)) {
             $this->redirect('/admin/site/');
         }
         $this->layout = false;
         $form_data = FormsData::GetFormDataByFormIdByDataId($fid, $id);
+
 //        Helper::Out($form_data);
         $content = $this->renderPartial('pdf-content', [
             'form' => PdfForm::GetPdfContentByFormIdDataId($fid, $id),
         ]);
+
         $pdf = new Pdf([
 // set to use core fonts only
             'mode' => Pdf::MODE_CORE,

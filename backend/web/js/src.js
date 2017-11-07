@@ -74,7 +74,7 @@ $(document).ready(function () {
     $(document).on('change paste keyup', '.boxes .drop-down-val', function () {
         var flag = true;
         var ob = $(this).parent().parent().parent();
-        $('.drop-down-val').each(function () {
+        $('#drop-dowg-src .drop-down-val').each(function () {
             if (!$(this).val()) {
                 flag = false;
             }
